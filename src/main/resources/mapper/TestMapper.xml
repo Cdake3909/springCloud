@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cq.springcloud.dao.TestDao">
+   <select id="insertkk" resultType="java.lang.Integer">
+        insert into t_kk(id, name) values (1,'众禄基金')
+    </select>
+
+    <select id="getName" resultType="java.lang.String">
+        select name from t_kk where id =1
+    </select>
+</mapper>

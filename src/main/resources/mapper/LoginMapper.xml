@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cq.springcloud.dao.LoginDao">
+    <resultMap id="custinfoResultMap" type="com.cq.springcloud.model.Custinfo">
+        <result property="name" column="name"/>
+        <result property="password" column="password"/>
+        <result property="mobileNo" column="mobile_no"/>
+        <result property="emailAddress" column="email_address"/>
+    </resultMap>
+   <insert id="insertIntoCustinfo" >
+        insert into t_custinfo(name,password,mobile_no,email_address) values (#{custinfo.name},#{custinfo.password},#{custinfo.mobileNo},#{custinfo.emailAddress});
+    </insert>
+    <select id="select count(*) from t_custinfo where "
+</mapper>
