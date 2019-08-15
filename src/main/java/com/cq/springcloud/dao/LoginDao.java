@@ -5,4 +5,5 @@ import org.apache.ibatis.annotations.Param;
 
 public interface LoginDao {
     public int insertIntoCustinfo(@Param("custinfo")  Custinfo custinfo);
+    public int queryCustInfoByMoblieAndPassword(@Param("custinfo")  Custinfo custinfo);
 }

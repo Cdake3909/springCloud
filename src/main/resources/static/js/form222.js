@@ -9,7 +9,7 @@ window.onload=function(){
                 addStyle(form_login,{ height: '0',transitionDelay:'0s'})
                 addStyle(form_register,{height: '548px',transitionDelay: 'http://demo.demohuo.top/modals/55/5597/demo/js/1.2s'})
             }else if(this.innerText=='登录'){
-                addStyle(form_login,{ height: '422px', transitionDelay: 'http://demo.demohuo.top/modals/55/5597/demo/js/1.2s'})
+                addStyle(form_login,{ height: '548px', transitionDelay: 'http://demo.demohuo.top/modals/55/5597/demo/js/1.2s'})
                 addStyle(form_register,{height: '0',transitionDelay:'0s'})
             }
         })

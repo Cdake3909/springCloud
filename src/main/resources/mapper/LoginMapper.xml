@@ -10,5 +10,7 @@
    <insert id="insertIntoCustinfo" >
         insert into t_custinfo(name,password,mobile_no,email_address) values (#{custinfo.name},#{custinfo.password},#{custinfo.mobileNo},#{custinfo.emailAddress});
     </insert>
-    <select id="select count(*) from t_custinfo where "
+    <select id="queryCustInfoByMoblieAndPassword" resultType="int">
+        select count(*) from t_custinfo where mobile_no =#{custinfo.mobileNo}  and password=#{custinfo.password};
+    </select>
 </mapper>
