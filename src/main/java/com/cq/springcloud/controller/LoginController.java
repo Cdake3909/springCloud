@@ -1,5 +1,6 @@
 package com.cq.springcloud.controller;
 
+import com.cq.springcloud.FeignService.PayFeignService;
 import com.cq.springcloud.model.Custinfo;
 import com.cq.springcloud.service.LoginService;
 import org.slf4j.Logger;
@@ -16,6 +17,8 @@ public class LoginController {
     private static final Logger log = LoggerFactory.getLogger(LoginController.class);
     @Autowired
     private LoginService loginService;
+    @Autowired
+    private PayFeignService payFeignService;
     @PostMapping("/register")
     public String register(@ModelAttribute Custinfo custinfo) {
         log.info(custinfo.toString());
@@ -33,5 +36,6 @@ public class LoginController {
         model.addAttribute("errorMsg","找不到用户："+custinfo.getMobileNo()+"，请注册");
         return new ModelAndView("login");
     }
+
 
 }
