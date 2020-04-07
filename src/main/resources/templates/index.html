@@ -1,5 +1,6 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title></title>
@@ -12,7 +13,7 @@
 <link href="../css/print.css" tppabs="https://www.17sucai.com/preview/527881/2016-05-22/tpmo_415_dashboard/css/print.css" rel="stylesheet" type="text/css" media="print" />
 <script src="../js/jquery-1.10.1.min.js" tppabs="https://www.17sucai.com/preview/527881/2016-05-22/tpmo_415_dashboard/js/jquery-1.10.1.min.js"></script>
 <script src="../js/side.js" tppabs="https://www.17sucai.com/preview/527881/2016-05-22/tpmo_415_dashboard/js/side.js" type="text/javascript"></script>
-
+<script type="text/javascript" src="../js/index.js"></script>
 </head>
 
 <body>
@@ -32,8 +33,9 @@ $(function() {
 });
 </script>
 <div class="menu_list">
+    <div id="menuTree"></div>
 <dl>
-<dt><span>一级分类名称</span></dt>
+<dt><span>员工管理</span></dt>
 <dd><a href="" title="二级分类">二级分类</a>
 <a href="" title="二级分类">二级分类</a>
 <a href="" title="二级分类" class="active">二级分类</a>
@@ -99,7 +101,8 @@ $(function() {
 <div id="Header">
 <div class="user">
 <div>
-<p>欢迎登录，管理员</p>
+    <p th:text="'欢迎,' + ${custinfo.name}"></p>
+
 <a href="#"><span>8</span><img src="../images/common/ico02.gif" tppabs="https://www.17sucai.com/preview/527881/2016-05-22/tpmo_415_dashboard/images/common/ico02.gif" width="20" height="20" alt=""></a>
 <a href="#"><img src="../images/common/ico03.gif" tppabs="https://www.17sucai.com/preview/527881/2016-05-22/tpmo_415_dashboard/images/common/ico03.gif" width="20" height="20" alt=""></a>
 <a href="#"><img src="../images/common/ico04.gif" tppabs="https://www.17sucai.com/preview/527881/2016-05-22/tpmo_415_dashboard/images/common/ico04.gif" width="20" height="20" alt=""></a>

@@ -25,7 +25,7 @@ public class LoginService {
         return loginDao.insertIntoCustinfo(custinfo);
     }
 
-    public int queryCustInfoByMoblieAndPassword(Custinfo custinfo)  {
+    public Custinfo queryCustInfoByMoblieAndPassword(Custinfo custinfo)  {
         return loginDao.queryCustInfoByMoblieAndPassword(custinfo);
     }
 

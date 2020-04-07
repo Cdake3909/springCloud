@@ -4,7 +4,6 @@ public class Custinfo {
     private  String name ;
     private String password;
     private String mobileNo ;
-    private String emailAddress;
     private String sessionKey  ;
 
     public String getName() {
@@ -31,14 +30,6 @@ public class Custinfo {
         this.mobileNo = mobileNo;
     }
 
-    public String getEmailAddress() {
-        return emailAddress;
-    }
-
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
-    }
-
     public String getSessionKey() {
         return sessionKey;
     }
@@ -53,7 +44,6 @@ public class Custinfo {
                 "name='" + name + '\'' +
                 ", password='" + password + '\'' +
                 ", mobileNo='" + mobileNo + '\'' +
-                ", emailAddress='" + emailAddress + '\'' +
                 ", sessionKey='" + sessionKey + '\'' +
                 '}';
     }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+	
+    <link rel="stylesheet" href="../css/style.css" tppabs="http://demo.demohuo.top/modals/55/5597/demo/css/style.css">
+	
+    <script src="../js/form222.js" ></script>
+	
+</head>
+<body>
+
+    <div class="form" style="position:relative">
+		<!--注册表单-->
+        <div class="form_register"  style="position:absolute">
+                <form id="form_register_id" action="#" method="post" th:action="@{/register}" th:object="${registerCustinfo}" >
+                <h1>注册表单</h1>
+                <div class="form_item">
+                    <label>用户名：</label>
+                    <input type="text" th:field="*{name}" placeholder="请输入用户名" required >
+                </div>
+                <div class="form_item">
+                    <label>密码：</label>
+                    <input type="password" th:field="*{password}" placeholder="请输入密码名" required>
+                </div>
+                <div class="form_item">
+                    <label>电话：</label>
+                    <input type="tel" th:field="*{mobileNo}" placeholder="请输入手机号码" required>
+                </div>
+                <div class="form_item">
+                    <input type="submit" value="注册">
+                </div>
+            </form>
+            <div class="info">已有账号？点击 <a th:href="goToLogin">登录</a>
+        </div>
+		
+
+
+    </div>
+</body>
+</html>

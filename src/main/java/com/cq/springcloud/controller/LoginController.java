@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -19,21 +20,23 @@ public class LoginController {
     private LoginService loginService;
     @Autowired
     private PayFeignService payFeignService;
-    @PostMapping("/register")
-    public String register(@ModelAttribute Custinfo custinfo) {
-        log.info(custinfo.toString());
-        loginService.insertIntoCustinfo(custinfo);
-        return "login";
-    }
+
 
     @PostMapping("/login")
-    public ModelAndView login(Custinfo custinfo, Model model){
+    public ModelAndView login(@ModelAttribute("custinfo")Custinfo custinfo, Model model){
         log.info(custinfo.toString());
-        int result = loginService.queryCustInfoByMoblieAndPassword(custinfo);
-        if(result>0){
+        Custinfo resultCustinfo = loginService.queryCustInfoByMoblieAndPassword(custinfo);
+        if(!"".equals(resultCustinfo.getMobileNo())||null!=resultCustinfo.getMobileNo()){
+            model.addAttribute("custinfo",resultCustinfo);
             return  new ModelAndView("index");
         }
         model.addAttribute("errorMsg","找不到用户："+custinfo.getMobileNo()+"，请注册");
+        return new ModelAndView("login");
+    }
+
+    @RequestMapping("/goToLogin")
+    public ModelAndView goToLogin(Model model){
+        model.addAttribute("custinfo",new Custinfo());
         return new ModelAndView("login");
     }
 
